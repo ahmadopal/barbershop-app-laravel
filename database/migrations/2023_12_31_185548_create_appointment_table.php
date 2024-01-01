@@ -15,9 +15,9 @@ class CreateAppointmentTable extends Migration
     {
         Schema::create('appointment', function (Blueprint $table) {
             $table->id();
-            $table->integer('barber_id');
-            $table->integer('user_id');
-            $table->integer('service_id');
+            $table->foreignId('barber_id')->nullable()->index('fk_appointment_to_barber');
+            $table->foreignId('user_id')->nullable()->index('fk_appointment_to_users');
+            $table->foreignId('service_id')->nullable()->index('fk_appointment_to_service');
             $table->date('date')->nullable();
             $table->time('time')->nullable();
             $table->enum('status', ['1,2']);

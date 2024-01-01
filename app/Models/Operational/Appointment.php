@@ -25,7 +25,7 @@ class Appointment extends Model
     protected $fillable = [
         'barber_id',
         'user_id',
-        'service_id',
+        'layanan_id',
         'date',
         'time',
         'status',
@@ -52,7 +52,7 @@ class Appointment extends Model
     public function service()
     {
         //3 Paramater (path model, field foreign key, field primary key from table hasMany/hasOne)
-        return $this->belongsTo('App\Models\MasterData\Service', 'service_id', 'id');
+        return $this->belongsTo('App\Models\MasterData\Layanan', 'layanan_id', 'id');
     }
 
     //One to One Relationship

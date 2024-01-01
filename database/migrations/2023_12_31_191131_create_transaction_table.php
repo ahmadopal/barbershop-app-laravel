@@ -16,7 +16,7 @@ class CreateTransactionTable extends Migration
         Schema::create('transaction', function (Blueprint $table) {
             $table->id();
             $table->foreignId('appointment_id')->nullable()->index('fk_transaction_to_appointment');
-            $table->string('price_service')->nullable();
+            $table->string('price_layanan')->nullable();
             $table->string('total')->nullable();
             $table->timestamps();
             $table->softDeletes();

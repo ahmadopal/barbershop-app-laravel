@@ -24,7 +24,7 @@ class Transaction extends Model
     //declare fillable
     protected $fillable = [
         'appointment_id',
-        'price_service',
+        'price_layanan',
         'total',
         'created_at', 
         'updated_at',

@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\MasterData\Service;
+use App\Models\MasterData\Layanan;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ServiceSeeder extends Seeder
+class LayananSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +16,7 @@ class ServiceSeeder extends Seeder
     public function run()
     {
         // Create data here
-        $service = [
+        $layanan = [
             [
                 'name' => 'Haircut',
                 'price' => 35000,
@@ -80,6 +80,6 @@ class ServiceSeeder extends Seeder
         ];
 
         // this array $service will be insert into table 'service'
-        Service::insert($service);
+        Layanan::insert($layanan);
     }
 }

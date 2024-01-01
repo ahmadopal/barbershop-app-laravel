@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\softDeletes;
 
-class Service extends Model
+class Layanan extends Model
 {
     //use HasFactory;
     use softDeletes;
 
     //declare table
-    public $table = 'service';
+    public $table = 'layanan';
 
     //this field must type date yyyy-mm-dd hh:mm:ss
     protected $dates = [
@@ -34,6 +34,6 @@ class Service extends Model
     public function appointment()
     {
         //2 Paramater (path model, field foreign key)
-        return $this->hasMany('App\Models\Operational\Appointment', 'service_id');
+        return $this->hasMany('App\Models\Operational\Appointment', 'layanan_id');
     }
 }

@@ -2,7 +2,13 @@
 
 namespace App\Http\Requests\Layanan;
 
+use App\Models\MasterData\Layanan;
+//  use gate;
 use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Component\HttpFoundation\Response;
+
+// this rule only applies at update request
+use Illuminate\Validation\Rule;
 
 class UpdateLayananRequest extends FormRequest
 {
@@ -13,7 +19,8 @@ class UpdateLayananRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // create middleware from kernel at here
+        return true;
     }
 
     /**
@@ -24,7 +31,13 @@ class UpdateLayananRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => [
+                'required', 'string', 'max:255', Rule::unique('layanan')->ignore($this->layanan),
+                // rule unique only works for other record id
+            ],
+            'price' => [
+                'required', 'string', 'max:255',
+            ],
         ];
     }
 }

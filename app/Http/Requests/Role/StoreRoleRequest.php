@@ -16,6 +16,7 @@ class StoreRoleRequest extends FormRequest
      */
     public function authorize()
     {
+        // create middleware from kernel at here
         return true;
     }
 
@@ -28,7 +29,7 @@ class StoreRoleRequest extends FormRequest
     {
         return [
             'title' => [
-                'required', 'string', 'max:255',
+                'required', 'string', 'max:255', 'unique:role'
             ]
         ];
     }

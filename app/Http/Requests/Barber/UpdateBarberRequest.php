@@ -16,6 +16,7 @@ class UpdateBarberRequest extends FormRequest
      */
     public function authorize()
     {
+        // create middleware from kernel at here
         return true;
     }
 
